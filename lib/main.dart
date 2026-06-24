@@ -20,12 +20,11 @@ class FinalProjectApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: !EnvConfig.isProduction,
-      title: 'UAS Mobile Lanjut',
+      title: EnvConfig.appName, 
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-      ),
+        colorSchemeSeed: EnvConfig.isProduction ? Colors.darkBlue : Colors.blueAccent,
+    ),
       routerConfig: AppRouter.router,
     );
   }
