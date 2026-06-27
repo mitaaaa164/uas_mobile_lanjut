@@ -20,11 +20,13 @@ class FinalProjectApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: EnvConfig.appName, 
+      title: EnvConfig.appName,
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: EnvConfig.isProduction ? Colors.darkBlue : Colors.blueAccent,
-    ),
+        colorSchemeSeed: EnvConfig.isProduction
+            ? const Color(0xFF00008B)
+            : Colors.blueAccent,
+      ),
       routerConfig: AppRouter.router,
     );
   }

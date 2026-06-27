@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import '../../../../core/network/dio_client.dart';
 
 class Article {
   final String title;
@@ -16,13 +15,13 @@ class Article {
 }
 
 class NewsRepository {
-  final DioClient dioClient;
+  final Dio dio;
 
-  NewsRepository(this.dioClient);
+  NewsRepository(this.dio);
 
   Future<List<Article>> fetchTopNews() async {
     try {
-      final response = await dioClient.dio.get(
+      final response = await dio.get(
         'top-headlines',
         queryParameters: {'category': 'technology', 'language': 'en'},
       );
