@@ -1,20 +1,25 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/domain/news_repository.dart';
+import '../../data/models/article_model.dart';
 
-// States
+//state
 abstract class NewsState {}
+
 class NewsInitial extends NewsState {}
+
 class NewsLoading extends NewsState {}
+
 class NewsSuccess extends NewsState {
-  final List<Article> articles;
+  final List<ArticleModel> articles;
   NewsSuccess(this.articles);
 }
+
 class NewsError extends NewsState {
   final String message;
   NewsError(this.message);
 }
 
-// Cubit
+//cubit
 class NewsCubit extends Cubit<NewsState> {
   final NewsRepository repository;
 
