@@ -46,6 +46,10 @@ class HomePage extends StatelessWidget {
                 itemCount: articles.length,
                 itemBuilder: (context, index) {
                   final article = articles[index];
+
+                  final String title = article.title ?? 'Tanpa Judul';
+                  final String description = article.description ?? '';
+
                   return Card(
                     margin: const EdgeInsets.symmetric(
                       horizontal: 16,
@@ -55,7 +59,7 @@ class HomePage extends StatelessWidget {
                     child: ListTile(
                       contentPadding: const EdgeInsets.all(16),
                       title: Text(
-                        article.title,
+                        title,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -64,8 +68,8 @@ class HomePage extends StatelessWidget {
                       subtitle: Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
-                          article.description.isNotEmpty
-                              ? article.description
+                          description.isNotEmpty
+                              ? description
                               : 'Tidak ada deskripsi',
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
