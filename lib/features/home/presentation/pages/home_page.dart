@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/config/env_config.dart';
 import '../../../../core/di/injection.dart';
@@ -19,7 +20,16 @@ class HomePage extends StatelessWidget {
               ? const Color(0xFF00008B)
               : Colors.blueAccent,
           foregroundColor: Colors.white,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.account_circle, size: 30),
+              onPressed: () {
+                context.push('/profile');
+              },
+            ),
+          ],
         ),
+
         body: BlocBuilder<NewsCubit, NewsState>(
           builder: (context, state) {
             if (state is NewsLoading || state is NewsInitial) {
