@@ -69,8 +69,15 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: Colors.black.withOpacity(0.8),
                 child: Center(
                   child: Lottie.network(
-                    'https://raw.githubusercontent.com/LottieFiles/lottie-react-native/master/example/assets/PinJump.json',
+                    'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json',
                     fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Text(
+                        'Oops.. Animasi gagal dimuat!\n(Internet harus menyala untuk fitur rahasia ini)',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      );
+                    },
                   ),
                 ),
               ),
