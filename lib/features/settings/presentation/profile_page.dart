@@ -33,7 +33,6 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(title: const Text('Profile Mahasiswa')),
       body: Stack(
         children: [
-          // Tampilan Halaman Profile Utama
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +42,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: const CircleAvatar(
                     radius: 70,
                     backgroundColor: Colors.blueAccent,
-
                     child: Icon(Icons.person, size: 80, color: Colors.white),
                   ),
                 ),
@@ -62,7 +60,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-
           if (_showLottie)
             Positioned.fill(
               child: Container(

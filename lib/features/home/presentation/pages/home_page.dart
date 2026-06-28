@@ -22,6 +22,13 @@ class HomePage extends StatelessWidget {
           foregroundColor: Colors.white,
           actions: [
             IconButton(
+              icon: const Icon(Icons.android, size: 28),
+              onPressed: () {
+                context.push('/reverse-nim');
+              },
+            ),
+
+            IconButton(
               icon: const Icon(Icons.account_circle, size: 30),
               onPressed: () {
                 context.push('/profile');
