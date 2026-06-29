@@ -7,7 +7,8 @@ plugins {
 
 android {
     namespace = "com.example.uas_mobile_lanjut"
-    compileSdk = flutter.compileSdkVersion
+    
+    compileSdk = 34 
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -20,15 +21,16 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.uas_mobile_lanjut"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
+        
+        minSdk = 21
+        targetSdk = 34
+        
+        versionCode = flutter.versionCode.toInt()
         versionName = flutter.versionName
     }
+    
+}
 
     buildTypes {
         release {
@@ -37,7 +39,6 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-}
 
 flutter {
     source = "../.."
