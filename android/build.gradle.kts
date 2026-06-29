@@ -17,23 +17,7 @@ subprojects {
 }
 
 subprojects {
-    project.buildDir = File("${rootProject.buildDir}/${project.name}")
     project.evaluationDependsOn(":app")
-
-    afterEvaluate {
-        if (project.plugins.hasPlugin("com.android.library")) {
-            val androidExt = project.extensions.findByName("android")
-            if (androidExt != null) {
-                try {
-                    val currentNamespace = androidExt.javaClass.getMethod("getNamespace").invoke(androidExt)
-                    if (currentNamespace == null) {
-                        androidExt.javaClass.getMethod("setNamespace", String::class.java).invoke(androidExt, project.group.toString())
-                    }
-                } catch (e: Exception) {
-                }
-            }
-        }
-    }
 }
 
 tasks.register<Delete>("clean") {
@@ -49,4 +33,3 @@ subprojects {
         }
     }
 }
-
