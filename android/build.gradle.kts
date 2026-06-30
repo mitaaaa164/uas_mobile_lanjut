@@ -44,3 +44,15 @@ subprojects {
         }
     }
 }
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.name == "isar_flutter_libs") {
+            android {
+                lintOptions {
+                    abortOnError = false
+                }
+            }
+        }
+    }
+}
