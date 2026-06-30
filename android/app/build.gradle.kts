@@ -1,12 +1,5 @@
-plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("dev.flutter.flutter-gradle-plugin")
-}
-
 android {
     namespace = "com.example.uas_mobile_lanjut"
-
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
@@ -21,10 +14,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.uas_mobile_lanjut"
-
-        minSdk = flutter.minSdkVersion
+        minSdk = 21
         targetSdk = 36
-
         versionCode = flutter.versionCode.toInt()
         versionName = flutter.versionName
     }
@@ -34,8 +25,4 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-}
-
-flutter {
-    source = "../.."
 }
