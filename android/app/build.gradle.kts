@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.uas_mobile_lanjut"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 36
         versionCode = flutter.versionCode.toInt()
         versionName = flutter.versionName
