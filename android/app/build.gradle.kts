@@ -7,7 +7,7 @@ plugins {
 android {
     namespace = "com.example.uas_mobile_lanjut"
 
-    compileSdk = 31
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -23,7 +23,7 @@ android {
         applicationId = "com.example.uas_mobile_lanjut"
 
         minSdk = flutter.minSdkVersion
-        targetSdk = 31
+        targetSdk = 34
 
         versionCode = flutter.versionCode.toInt()
         versionName = flutter.versionName
