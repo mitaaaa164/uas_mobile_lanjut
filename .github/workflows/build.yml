@@ -33,6 +33,12 @@ jobs:
       - name: Flutter Version
         run: flutter --version
 
+      - name: Flutter Clean
+        run: flutter clean
+
+      - name: Repair Pub Cache
+        run: flutter pub cache repair
+
       - name: Get Dependencies
         run: flutter pub get
 
